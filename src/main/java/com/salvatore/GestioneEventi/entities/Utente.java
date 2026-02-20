@@ -15,7 +15,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
 @JsonIgnoreProperties({"password", "accountNonExpired", "accountNonLocked", "authorities", "credentialsNonExpired", "enabled"})
 public class Utente implements UserDetails {
@@ -35,12 +34,6 @@ public class Utente implements UserDetails {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RuoloUtente ruolo;
-
-    @OneToMany(mappedBy = "organizzatore", cascade = CascadeType.ALL)
-    private List<Evento> eventi;
-
-    @OneToMany(mappedBy = "utente", cascade = CascadeType.ALL)
-    private List<Prenotazione> prenotazioni;
 
     public Utente(long id, String username, String email, String password, RuoloUtente ruolo) {
         this.id = id;
