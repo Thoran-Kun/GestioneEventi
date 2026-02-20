@@ -44,7 +44,7 @@ public class UtenteController {
    }
 
    @GetMapping("/{utenteId}")
-   @PreAuthorize("hasAnyAuthority('ORGANIZZATORE', 'UTENTE_NORMALE')")
+   @PreAuthorize("hasAnyAuthority('ORGANIZZATORE', 'USER')")
     public Utente getUtenteById(@PathVariable long utenteId){
         return this.utenteService.findById(utenteId);
    }

@@ -44,6 +44,6 @@ public class UtenteService {
     }
 
     public Utente findById(long id){
-        return utenteRepository.findById(id).orElseThrow(() -> new NotFoundException("utente con ID: " + id + " non è stato trovato!"))
+        return utenteRepository.findById(id).orElseThrow(() -> new NotFoundException("utente con ID: " + id + " non è stato trovato!"));
     }
 }
